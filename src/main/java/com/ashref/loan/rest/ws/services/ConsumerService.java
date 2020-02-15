@@ -14,6 +14,6 @@ public class ConsumerService {
 	private final String URL = "http://localhost:8081/ws/loan/status";
 	
 	public WsResponse consume(CustomerRequest request) {
-		return restTemplate.getForObject(URL, WsResponse.class);
+		return restTemplate.postForObject(URL, request, WsResponse.class);
 	}
 }
