@@ -25,4 +25,16 @@ public class TestConsumerService {
 				.build();
 		return service.consume(request);
 	}
+	
+	@GetMapping("/feign")
+	public WsResponse testConsumeByFeign() {
+		CustomerRequest request = CustomerRequest.builder()
+				.customerName("Achref")
+				.age(30)
+				.yearlyIncome(20001)
+				.cibilScore(600)
+				.employmentMode("full time")
+				.build();
+		return service.consumeByFeign(request);
+	}
 }
